@@ -1,10 +1,10 @@
 FROM openjdk:8
-MAINTAINER Ivan Ermilov <ivan.s.ermilov@gmail.com>
+MAINTAINER lanxy88 <lanxy88@gmail.com>
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends net-tools curl netcat
 
-ENV HBASE_VERSION 1.2.6
-ENV HBASE_URL http://www.apache.org/dist/hbase/$HBASE_VERSION/hbase-$HBASE_VERSION-bin.tar.gz
+ENV HBASE_VERSION 1.3.1
+ENV HBASE_URL http://dev.gtis.com.cn/nexus/content/repositories/thirdparty/hbase/hbase/$HBASE_VERSION/hbase-$HBASE_VERSION-hbase.tar.gz
 RUN set -x \
     && curl -fSL "$HBASE_URL" -o /tmp/hbase.tar.gz \
     && curl -fSL "$HBASE_URL.asc" -o /tmp/hbase.tar.gz.asc \
